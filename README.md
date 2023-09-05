@@ -832,18 +832,6 @@ foreach
 2023/8/31
 
 链接数据库总是出错：需要把mysql的jar包放到tomcat的lib目录下
-<c:forEach items="${users}" var="user" varStatus="s">
-<td>${user.id}</td>
-<td>${user.name}</td>
-<td>${user.Sex}</td>
-<td>${user.identy}</td>
-<td>${user.title}</td>
-<td>${user.password}</td>
-<td class="action-buttons">
-<button>Edit</button>
-<button>Delete</button>
-</td>
-</c:forEach>
 
 这样遍历
 
@@ -936,4 +924,7 @@ scope="prototype"切换多个
 
 spring是用构造方法造对象
 
-
+使用工厂造对象
+<bean id="bookDaoFactory" class="spring.factory.BookFactory"></bean>
+<!--    不需要class了-->
+<bean id="bookdao" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>
