@@ -936,4 +936,4 @@ scope="prototype"切换多个
 
 spring是用构造方法造对象
 
-使用静态工厂造对象
+
