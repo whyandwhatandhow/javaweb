@@ -9,7 +9,7 @@ public class MainTest2 {
         //获取ioc容器
         ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
         //获取bean
-        BookDao bookDao = (BookDao) context.getBean("bookDao");
+        BookDao bookDao = (BookDao) context.getBean("bookdao");
         bookDao.bookDao();
     }
 }

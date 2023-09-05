@@ -5,7 +5,7 @@
 <!--    1.导入spring的坐标-->
 
 <!--    2.配置bean  -->
-    <bean id="bookdao" class="spring.dao.impl.BookDaoImpl" scope="prototype"/>
+    <bean id="bookdao" class="spring.dao.impl.BookDaoImpl"/>
     <bean id="bookService" class="spring.service.impl.BookServiceImpl">
 <!--        property表示配置属性-->
 <!--        name是类中的属性-->

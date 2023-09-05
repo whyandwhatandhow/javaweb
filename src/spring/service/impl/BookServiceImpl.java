@@ -6,9 +6,13 @@ import spring.service.BookService;
 
 public class BookServiceImpl implements BookService {
 
-    BookDao bookDao=new BookDaoImpl();
+    private BookDao bookDao;
     @Override
     public void bookService() {
         bookDao.bookDao();
+    }
+
+    public void setBookDao(BookDao bookDao) {
+        this.bookDao = bookDao;
     }
 }
