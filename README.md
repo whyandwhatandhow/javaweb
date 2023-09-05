@@ -928,3 +928,10 @@ spring是用构造方法造对象
 <bean id="bookDaoFactory" class="spring.factory.BookFactory"></bean>
 <!--    不需要class了-->
 <bean id="bookdao" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>
+
+
+<!--    方法四，factoryBean-->
+<bean id="bookdao" class="spring.factory.BookDaoFactoryBean"></bean>
+
+
+setter注入
