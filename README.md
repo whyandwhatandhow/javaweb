@@ -943,3 +943,6 @@ setter注入
 
 构造方法注入
 <constructor-arg name="bookDao" ref="bookdao"/>
+
+自动装填
+<bean id="userService" class="spring.service.impl.UserServiceImpl" autowire="byType"/>

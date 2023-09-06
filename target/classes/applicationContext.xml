@@ -15,7 +15,9 @@
         <property name="count" value="123"/>
         <property name="name" value="ymd"/>
     </bean>
-    <bean id="bookdao" class="spring.factory.BookDaoFactoryBean"></bean>
+    <bean id="bookdao" class="spring.factory.BookDaoFactoryBean">
+
+    </bean>
 
     <bean id="bookService" class="spring.service.impl.BookServiceImpl">
 <!--        property表示配置属性-->
@@ -24,6 +26,9 @@
 
         <property name="bookDao" ref="bookdao"></property>
         <property name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookdao"/>
     </bean>
+
+    <bean id="userService" class="spring.service.impl.UserServiceImpl" autowire="byType"/>
 
 </beans>
