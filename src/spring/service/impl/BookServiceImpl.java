@@ -9,10 +9,21 @@ public class BookServiceImpl implements BookService {
 
     private BookDao bookDao;
     private UserDao userDao;
+
+    public BookServiceImpl() {
+    }
+
+    public BookServiceImpl(BookDao bookDao) {
+        this.bookDao = bookDao;
+    }
+
     @Override
     public void bookService() {
         bookDao.bookDao();
+        userDao.save();
     }
+
+
 
     public void setBookDao(BookDao bookDao) {
         this.bookDao = bookDao;

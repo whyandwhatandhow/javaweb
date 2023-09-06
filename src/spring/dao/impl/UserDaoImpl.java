@@ -7,6 +7,15 @@ public class UserDaoImpl implements UserDao {
     private String name;
     @Override
     public void save() {
-        System.out.println("user dao");
+        System.out.println("user dao"+name+count);
+    }
+
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -11,7 +11,11 @@
 <!--    <bean id="bookdao" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>-->
 
 <!--    方法四，factoryBean-->
-<bean id="bookdao" class="spring.factory.BookDaoFactoryBean"></bean>
+    <bean id="userDao" class="spring.dao.impl.UserDaoImpl">
+        <property name="count" value="123"/>
+        <property name="name" value="ymd"/>
+    </bean>
+    <bean id="bookdao" class="spring.factory.BookDaoFactoryBean"></bean>
 
     <bean id="bookService" class="spring.service.impl.BookServiceImpl">
 <!--        property表示配置属性-->
@@ -19,6 +23,7 @@
 <!--        ref是bean中的属性-->
 
         <property name="bookDao" ref="bookdao"></property>
+        <property name="userDao" ref="userDao"/>
     </bean>
 
 </beans>

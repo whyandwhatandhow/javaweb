@@ -935,3 +935,11 @@ spring是用构造方法造对象
 
 
 setter注入
+有基础类型赋值
+<bean id="userDao" class="spring.dao.impl.UserDaoImpl">
+<property name="count" value="123"/>
+<property name="name" value="ymd"/>
+</bean>
+
+构造方法注入
+<constructor-arg name="bookDao" ref="bookdao"/>
