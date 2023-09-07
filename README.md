@@ -946,3 +946,11 @@ setter注入
 
 自动装填
 <bean id="userService" class="spring.service.impl.UserServiceImpl" autowire="byType"/>
+
+加载配置文件
+<bean id="database" class="com.alibaba.druid.pool.DruidDataSource">
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/software"/>
+<property name="username" value="root"/>
+<property name="password" value="42391523"/>
+</bean>
