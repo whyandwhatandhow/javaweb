@@ -2,8 +2,6 @@ package spring.dao.impl;
 
 import spring.dao.BookDao;
 
-import java.util.*;
-
 public class BookDaoImpl implements BookDao {
     int count;
     double price;

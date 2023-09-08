@@ -1,6 +1,5 @@
 package spring.factory;
 
-import domain.User;
 import org.springframework.beans.factory.FactoryBean;
 import spring.dao.BookDao;
 import spring.dao.impl.BookDaoImpl;

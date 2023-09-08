@@ -2,7 +2,6 @@ package spring.service.impl;
 
 import spring.dao.BookDao;
 import spring.dao.UserDao;
-import spring.dao.impl.BookDaoImpl;
 import spring.service.BookService;
 
 public class BookServiceImpl implements BookService {

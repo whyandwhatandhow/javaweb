@@ -954,3 +954,72 @@ setter注入
 <property name="username" value="root"/>
 <property name="password" value="42391523"/>
 </bean>
+
+
+开新的命名空间
+xmlns:context="http://www.springframework.org/schema/context"
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+
+
+ <bean id="database" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+    </bean>
+
+    <context:property-placeholder location="druid.properties"/>
+
+
+纯注解模式
+用类配置
+@Configuration
+public class SpringConfig {
+}
+
+
+ApplicationContext context=new AnnotationConfigApplicationContext(SpringConfig.class);
+PersonDao personDao=(PersonDao) context.getBean("personDao");//这里的personDao是文件中的注解
+personDao.print();
+
+Dao层
+@Repository("annotation")
+public class AnnocationDaoImpl implements AnnocationDao{
+@Override
+public void sout() {
+System.out.println("纯注解开发");
+}
+}
+
+
+Service层
+@Service
+public class AnnocationServiceImpl implements AnnocationService {
+
+    //注解注入对象
+    @Autowired
+    @Qualifier("annotation")//指定
+    private AnnocationDao annocationDao;//和注解名称一样
+    @Override
+    public void sout() {
+        System.out.println("annocation service");
+        annocationDao.sout();
+    }
+
+}
+
+
+在配置中定义第三方bean
+public class SpringConfig {
+
+
+@Bean
+public DataSource source(){
+DruidDataSource ds=new DruidDataSource();
+ds.setDriverClassName("root");
+//        ds.setUrl();等等管理第三方bean要自己配置
+return ds;
+}
+}
+
