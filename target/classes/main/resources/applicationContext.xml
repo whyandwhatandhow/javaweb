@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
+<!--    1.导入spring的坐标-->
+
+<!--    2.配置bean  -->
+<!--    <bean id="bookdao" class="spring.dao.impl.BookDaoImpl" scope="prototype"/>-->
+<!--    <bean id="bookDaoFactory" class="spring.factory.BookFactory"></bean>-->
+<!--    不需要class了-->
+<!--    <bean id="bookdao" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>-->
+
+<!--    方法四，factoryBean-->
+    <bean id="userDao" class="spring.dao.impl.UserDaoImpl">
+        <property name="count" value="123"/>
+        <property name="name" value="ymd"/>
+    </bean>
+    <bean id="bookdao" class="spring.factory.BookDaoFactoryBean">
+
+    </bean>
+
+    <bean id="bookService" class="spring.service.impl.BookServiceImpl">
+<!--        property表示配置属性-->
+<!--        name是类中的属性-->
+<!--        ref是bean中的属性-->
+
+        <property name="bookDao" ref="bookdao"></property>
+        <property name="userDao" ref="userDao"/>
+        <constructor-arg name="bookDao" ref="bookdao"/>
+    </bean>
+
+    <bean id="userService" class="spring.service.impl.UserServiceImpl" autowire="byType"/>
+
+    <bean id="database" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <context:property-placeholder location="classpath:*.properties"/>
+
+    <context:component-scan base-package="spring.dao.impl"/>
+    <context:component-scan base-package="spring.service.impl"/>
+
+
+</beans>
