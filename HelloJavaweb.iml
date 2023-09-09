@@ -33,6 +33,7 @@
       <configuration>
         <fileset id="fileset" name="Spring 应用程序上下文" removed="false">
           <file>file://$MODULE_DIR$/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
