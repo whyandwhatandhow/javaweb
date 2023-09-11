@@ -17,6 +17,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis/mapper/LoginMapper.xml"/>
+<!--        <mapper resource="mybatis/mapper/LoginMapper.xml"/>-->
+        <package name="mybatis.mapper"/>
     </mappers>
 </configuration>

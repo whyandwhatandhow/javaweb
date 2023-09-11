@@ -6,4 +6,7 @@
     <select id="selectAll" resultType="mybatis.domain.login">
         select * from login;
     </select>
+    <select id="selectById" resultType="mybatis.domain.login">
+        select * from login where username =#{username};
+    </select>
 </mapper>

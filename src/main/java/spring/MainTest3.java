@@ -7,7 +7,7 @@ import javax.sql.DataSource;
 
 public class MainTest3 {
     public static void main(String[] args) {
-        ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml.bak");
         DataSource source=(DataSource) context.getBean("database");
         System.out.println(source);
     }

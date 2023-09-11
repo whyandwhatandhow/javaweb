@@ -15,7 +15,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         //加载核心配置文件
-        String resource="mybatis-config.xml";
+        String resource= "mybatis-config.xml.bak";
         InputStream inputStream= Resources.getResourceAsStream(resource);
         SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(inputStream);
 

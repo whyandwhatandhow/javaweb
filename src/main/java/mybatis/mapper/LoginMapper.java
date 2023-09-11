@@ -7,4 +7,6 @@ import java.util.List;
 public interface LoginMapper {
 
     List<login> selectAll();
+
+    login selectById(String username);
 }
